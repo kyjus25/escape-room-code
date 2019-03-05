@@ -1,0 +1,41 @@
+<div id="inputs">
+  <input type="text" pattern="[0-9]*" [(ngModel)]="digit1" placeholder="0" maxlength="1">
+  <input type="text" pattern="[0-9]*" [(ngModel)]="digit2" placeholder="0" maxlength="1">
+  <input type="text" pattern="[0-9]*" [(ngModel)]="digit3" placeholder="0" maxlength="1">
+  <input type="text" pattern="[0-9]*" [(ngModel)]="digit4" placeholder="0" maxlength="1">
+</div>
+
+<div id="hints">
+  <div class="hint">
+    <button class="{{hints[0]}}" (click)="showHint(0)">Hint 1</button>
+  </div>
+  <div class="hint">
+    <button class="{{hints[1]}}" (click)="showHint(1)">Hint 2</button>
+  </div>
+  <div class="hint">
+    <button class="{{hints[2]}}" (click)="showHint(2)">Hint 3</button>
+  </div>
+  <div class="hint">
+    <button class="{{hints[3]}}" (click)="showHint(3)">Hint 4</button>
+  </div>
+</div>
+
+<div *ngIf="allCorrect()">
+  <p>You have answered correctly!</p>
+</div>
+
+<div *ngIf="!allCorrect() && hints[0]">
+  <p>Hint 1</p>
+</div>
+
+<div *ngIf="!allCorrect() && hints[1]">
+  <p>Hint 2</p>
+</div>
+
+<div *ngIf="!allCorrect() && hints[2]">
+  <p>Hint 3</p>
+</div>
+
+<div *ngIf="!allCorrect() && hints[3]">
+  <p>Hint 4</p>
+</div>
